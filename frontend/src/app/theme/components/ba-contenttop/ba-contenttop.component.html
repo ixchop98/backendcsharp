@@ -1,0 +1,43 @@
+
+  <div class="content-top">
+    <h1 class="al-title">{{ activePageTitle }}</h1>  
+    <ul class="breadcrumb al-breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/pages">Home</a></li>
+      <li class="breadcrumb-item active">{{ activePageTitle }}</li>
+    </ul>
+    
+  </div>
+  <br>
+  
+  <div class="row" style="width: 100%;">
+    <app-ba-card [title]="'Cuenta No: '+_state.getCurrentUser().numcuenta" baCardClass="with-scroll" class="col-12">
+    <form class="row form-inline col-12">
+      <div class="form-group">
+        <label for="input01">Nombres</label>
+        
+        <input disabled="true" type="text" class="form-control" value={{_state.getCurrentUser().nombres}} >
+      </div>
+      <div class="form-group">
+        <label for="input01">Apellidos</label>
+        <input disabled="true" type="text" class="form-control" value={{_state.getCurrentUser().apellidos}} >
+      </div>
+      <div class="form-group">
+        <label for="input01">DPI</label>
+        <input disabled="true" type="text" class="form-control" value={{_state.getCurrentUser().dpi}} >
+      </div>
+      <div class="form-group">
+        <label for="input01">correo</label>
+        <input disabled="true" type="text" class="form-control" value={{_state.getCurrentUser().email}} >
+      </div>
+
+      <!--div class="form-group">
+        <button type="submit" class="btn btn-primary">Send invitation</button>
+      </div-->
+    </form>   
+    </app-ba-card>         
+
+  </div>
+    
+
+  <hr>
+  <br>  

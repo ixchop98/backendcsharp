@@ -1,0 +1,27 @@
+
+<div class="row d-flex justify-content-center">
+    <app-ba-card title="Transferencia monetaria" baCardClass="with-scroll">
+        <div class="row" >
+          <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" >
+          <div class="col-sm-12"  >
+            <div class="form-group" [ngClass]="{'has-error': (!numcuenta.valid && numcuenta.touched), 'has-success': (numcuenta.valid && numcuenta.touched)}">
+              <label for="inputFirstName">No. cuenta destino</label>
+              <input formControlName="numcuenta" type="text" class="form-control" id="inputFirstName" placeholder="Destino" required>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="form-group" [ngClass]="{'has-error': (!monto.valid && monto.touched), 'has-success': (monto.valid && monto.touched)}">
+              <label for="inputLastName">Monto</label>
+              <input formControlName="monto" type="number" class="form-control" id="inputLastName" placeholder="Monto" required>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+          
+          </form>
+        </div>
+        
+                    
+      </app-ba-card>           
+</div>
