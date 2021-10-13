@@ -1,0 +1,98 @@
+
+<app-ba-card title="Datos del usuario" baCardClass="with-scroll">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="inputFirstName" #nit id="nit">Nit</label>
+        <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="inputLastName" #name id="nombre">Nombre</label>
+        <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+      </div>
+    </div>
+   
+  </div>    
+  <div class="row">
+    <div class="col-sm-6">
+        <div class="form-group">
+          <label for="inputFirstName">Fecha</label>
+          <input type="date" class="form-control" id="inputFirstName" placeholder="First Name">
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="inputLastName">Total</label>
+          <input type="number" class="form-control" id="inputLastName" placeholder="Last Name">
+        </div>
+      </div>       
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+        <button  type="button" class="btn btn-default">Crear Factura</button>
+      </div>
+      <div class="col-md-2">
+        <button (click)="global.limpiarCarrito()" type="button" class="btn btn-danger">Limpiar Carrito</button>
+      </div>       
+  </div>  
+  
+</app-ba-card>  
+
+
+
+
+<div class="row">
+
+
+    <div class="col-md-12">
+        <app-ba-card title="Productos Actuales" baCardClass="with-scroll table-panel">
+            <div class="horizontal-scroll">
+                <table class="table table-condensed">
+                  <thead>
+                  <tr>
+                    <th class="table-id">#</th>
+                    <th>Producto</th>
+                    <th class="col-1">Cantidad</th>
+                    <th>Precio(U)</th>
+                    <th>Subtotal</th>
+                    <th>Editar</th>
+                    <th>Quitar</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+
+                  <tr>
+                    <td class="table-id">0</td>
+                    <td>Producto1</td>
+                    <td >
+                      <label *ngIf="true" >2</label>
+                      <input *ngIf="false" type="number" class="form-control"  >
+
+                    </td>
+                    <td>Q 25</td>
+                    <td>Q 50</td>
+                    <td>
+                        <button type="button" class="btn btn-info">
+                          <span *ngIf="true">Editar</span>
+                          <span (clicl)="editarCarrito(2,2)"  *ngIf="false">Hecho</span>
+                        </button>
+                    </td>                    
+                    <td>
+                        <button type="button" class="btn btn-danger">X</button>
+                    </td>
+                  </tr>
+                  
+                  
+                  </tbody>
+                </table>
+              </div>
+              
+        </app-ba-card>
+      </div>
+      
+      
+
+
+</div>

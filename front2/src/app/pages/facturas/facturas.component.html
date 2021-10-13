@@ -1,0 +1,58 @@
+<div class="row">
+
+
+    <div class="col-md-12">
+        <app-ba-card title="Facturas" baCardClass="with-scroll table-panel">
+            <div class="horizontal-scroll">
+                <table class="table table-condensed">
+                  <thead>
+                  <tr>
+                    <th class="table-id">#</th>
+                    <th>Correlativo</th>
+                    <th>Nombre</th>
+                    <th>Nit</th>
+                    <th>Fecha</th>
+                    <th>Total</th>
+                    <th>Ver</th>
+                    <th>Eliminar</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <!--tr *ngFor="let item of peopleTableData">
+                    <td class="table-id">{{ item.id }}</td>
+                    <td>{{ item.firstName }}</td>
+                    <td>{{ item.lastName }}</td>
+                    <td>{{ item.username }}</td>
+                    <td><a class="email-link" href="mailto:{{ item.email }}">{{ item.email }}</a></td>
+                    <td>
+                      <button ngClass="{ btn btn-xs btn-{{ item.status }}">{{ item.status }}</button>
+                    </td>
+                  </tr-->
+
+                  <tr>
+                    <td class="table-id">1</td>
+                    <td>020304</td>
+                    <td>Usuario1</td>
+                    <td>2017001</td>
+                    <td>1/2/2020</td>
+                    <td>25000</td>
+                    <td>
+                        <button  (click)="open()"  type="button" class="btn btn-default">Ver</button>
+                    </td>
+                    <td>
+                      <button  (click)="eliminar(2)"  type="button" class="btn btn-danger">X</button>
+                  </td>                    
+                  </tr>
+                  
+                  
+                  </tbody>
+                </table>
+              </div>
+              
+        </app-ba-card>
+      </div>
+      
+      
+
+
+</div>

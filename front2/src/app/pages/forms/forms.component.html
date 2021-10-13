@@ -1,0 +1,396 @@
+<div class="widgets">    
+    <div class="row">
+        <div class="col-md-6">
+          <!--==================BA CARD==========================-->
+          <app-ba-card title="Standard Fields" baCardClass="with-scroll">
+            <form>
+              <div class="form-group">
+                <label for="input01">Text</label>
+                <input type="text" class="form-control" id="input01" placeholder="Text">
+              </div>
+              <div class="form-group">
+                <label for="input02">Password</label>
+                <input type="password" class="form-control" id="input02" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="input03">Rounded Corners</label>
+                <input type="text" class="form-control form-control-rounded" id="input03" placeholder="Rounded Corners">
+              </div>
+              <div class="form-group">
+                <label for="input04">With help</label>
+                <input type="text" class="form-control" id="input04" placeholder="With help">
+                <span class="help-block sub-little-text">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+              </div>
+              <div class="form-group">
+                <label for="input05">Disabled Input</label>
+                <input type="text" class="form-control" id="input05" placeholder="Disabled Input" disabled>
+              </div>
+            
+              <div class="form-group">
+                <label for="textarea01">Textarea</label>
+                <textarea placeholder="Default Input" class="form-control" id="textarea01"></textarea>
+              </div>
+            
+              <div class="form-group">
+                <input type="text" class="form-control form-control-sm" id="input2" placeholder="Small Input">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-lg" id="input4" placeholder="Large Input">
+              </div>
+            </form>
+          </app-ba-card>
+          <!--==================BA CARD==========================-->
+          <app-ba-card title="Input Groups" baCardClass="with-scroll">
+            <div class="input-group mb-2">
+              <span class="input-group-text addon-left input-group-addon-primary">@</span>
+              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+            </div>            
+            
+            <div class="input-group">
+              <input type="text" class="form-control with-warning-addon" placeholder="Recipient's username" aria-describedby="basic-addon2">
+              <span class="input-group-text input-group-addon-warning addon-right" id="basic-addon2">@example.com</span>
+            </div>
+            
+            <div class="input-group">
+              <span class="input-group-text addon-left input-group-addon-success">$</span>
+              <input type="text" class="form-control with-success-addon" aria-label="Amount (to the nearest dollar)">              
+              <span class="input-group-text input-group-addon-success addon-right" id="basic-addon2">.00</span>
+            </div>
+       
+
+            <div class="input-group">
+              <input type="text" class="form-control with-danger-addon" placeholder="Search for...">
+              <span class="input-group-btn">
+                  <button class="btn btn-danger" type="button">Go!</button>
+              </span>
+            </div>
+            
+          </app-ba-card>
+          <!--==================BA CARD==========================-->                    
+          <app-ba-card title="Selects" baCardClass="with-scroll">
+            <div class="form-group">
+              <label for="exampleSelect1">Example select</label>
+              <select class="form-control" id="exampleSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="exampleSelect2">Example multiple select</label>
+              <select multiple class="form-control" id="exampleSelect2">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+                  
+          </app-ba-card>
+          <!--==================BA CARD==========================-->
+        </div>
+
+
+
+
+        <!--==================COMUMN2==========================-->
+        <!--==================COMUMN2==========================-->
+        <!--==================COMUMN2==========================-->
+        <!--==================COMUMN2==========================-->
+        <div class="col-md-6">
+          <app-ba-card title="Validation States" baCardClass="with-scroll">
+            <div class="form-group has-success">
+              <label class="control-label" for="inputSuccess1">Input with success</label>
+              <input type="text" class="form-control" id="inputSuccess1">
+            </div>
+            <div class="form-group has-warning">
+              <label class="control-label" for="inputWarning1">Input with warning</label>
+              <input type="text" class="form-control" id="inputWarning1">
+            </div>
+            <div class="form-group has-error">
+              <label class="control-label" for="inputError1">Input with error</label>
+              <input type="text" class="form-control" id="inputError1">
+            </div>
+              <app-ba-multicheckbox [(myProp)]="checkboxModel" ></app-ba-multicheckbox>
+            <div class="form-group has-success has-feedback">
+              <label class="control-label" for="inputSuccess2">Input with success</label>
+              <input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
+              <i class="ion-checkmark-circled form-control-feedback" aria-hidden="true"></i>
+              <span id="inputSuccess2Status" class="sr-only">(success)</span>
+            </div>
+            <div class="form-group has-warning has-feedback">
+              <label class="control-label" for="inputWarning2">Input with warning</label>
+              <input type="text" class="form-control" id="inputWarning2" aria-describedby="inputWarning2Status">
+              <i class="ion-alert-circled form-control-feedback" aria-hidden="true"></i>
+              <span id="inputWarning2Status" class="sr-only">(warning)</span>
+            </div>
+            <div class="form-group has-error has-feedback">
+              <label class="control-label" for="inputError2">Input with error</label>
+              <input type="text" class="form-control" id="inputError2" aria-describedby="inputError2Status">
+              <i class="ion-android-cancel form-control-feedback" aria-hidden="true"></i>
+              <span id="inputError2Status" class="sr-only">(error)</span>
+            </div>
+            <div class="form-group has-success has-feedback">
+              <label class="control-label" for="inputGroupSuccess1">Input group with success</label>
+              <div class="input-group">
+                <span class="input-group-text addon-left">@</span>
+                <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
+              </div>
+              <i class="ion-checkmark-circled form-control-feedback" aria-hidden="true"></i>
+              <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+            </div>
+              
+          </app-ba-card>
+          <!--==================BA CARD==========================-->
+          <app-ba-card title="Checkboxes & Radios" baCardClass="with-scroll">
+            <div class="checkbox-demo-row">
+              
+              <app-ba-multicheckbox [(myProp)]="checkboxModel" ></app-ba-multicheckbox>
+              
+              
+              <div class="input-demo radio-demo row">
+                <div class="col-md-4">
+                  <label class="radio-inline custom-radio nowrap">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <span>Option 1</span>
+                  </label>
+                </div>
+                <div class="col-md-4">
+                  <label class="radio-inline custom-radio nowrap">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <span>Option 2</span>
+                  </label>
+                </div>
+                <div class="col-md-4">
+                  <label class="radio-inline custom-radio nowrap">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                    <span>Option3</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div>
+              <app-ba-chechbox [(myProp)]="isDisabled"  [label]="'Disabled checkbox'" [disabled]="true"
+              id="item.value"
+                  ngDefaultControl></app-ba-chechbox>
+              <div class="radio disabled">
+                <label class="custom-radio nowrap">
+                  <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+                  <span>Disabled option</span>
+                </label>
+              </div>
+            </div>
+            
+          </app-ba-card>
+          <!--==================BA CARD==========================-->
+          <app-ba-card title="Rating" baCardClass="with-scroll" class="">
+            <div class="row">
+            <div class="col-md-6">
+
+
+              <ngb-rating [(rate)]="_rate1" class="rating" [max]=5 ngClass="col-md-6">
+                <ng-template let-fill="fill" let-index="index">
+                  <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+                </ng-template>
+              </ngb-rating>
+              <span class="help-block col-md-4">Rate: {{_rate1}}</span>
+            </div>
+            
+            <div class="col-md-6">
+              <ngb-rating [(rate)]="_rate2" class="rating" [max]=5 ngClass="col-md-6">
+                <ng-template let-fill="fill" let-index="index">
+                  <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&hearts;</span>
+                </ng-template>
+              </ngb-rating>
+              <span class="help-block col-md-4">Rate: {{_rate2}}</span>
+            </div>
+            </div>
+          </app-ba-card>
+        </div>        
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="row">
+      <div class="col-md-12">
+          <!--==================BA CARD==========================-->
+          <app-ba-card title="Standard Fields" baCardClass="with-scroll">
+            <form class="row form-inline">
+              <div class="form-group col-sm-3">
+                <input type="text" class="form-control" id="exampleInputName2" placeholder="Name">
+              </div>
+              <div class="form-group col-sm-3">
+                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <div class="checkbox">
+                  <!--ba-checkbox [(ngModel)]="isRemember" [label]="'Remember me'" [ngModelOptions]="{standalone: true}"></ba-checkbox-->
+                </div>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Send invitation</button>
+              </div>
+            </form>
+            
+          </app-ba-card>        
+        
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-6">
+        <div>
+          <app-ba-card title="Standard Fields" baCardClass="with-scroll">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+              <div class="checkbox">
+                <!--ba-checkbox [(ngModel)]="isChecked" [label]="'Check me out'" [ngModelOptions]="{standalone: true}"></ba-checkbox-->
+              </div>
+              <button type="submit" class="btn btn-danger">Submit</button>
+            </form>
+                        
+          </app-ba-card>                  
+        </div>
+  
+        <div>
+          <app-ba-card title="Standard Fields" baCardClass="with-scroll">
+            <form class="form-horizontal">
+              <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 form-control-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 form-control-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="offset-sm-2 col-sm-10">
+                  <div class="checkbox">
+                    <!--ba-checkbox [(ngModel)]="isRemember" [label]="'Remember me'" [ngModelOptions]="{standalone: true}"></ba-checkbox-->
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="offset-sm-2 col-sm-10">
+                  <button type="submit" class="btn btn-warning">Sign in</button>
+                </div>
+              </div>
+            </form>
+            
+          </app-ba-card>              
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div>
+          <app-ba-card title="Standard Fields" baCardClass="with-scroll">
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Recipients">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Subject">
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" placeholder="Message"></textarea>
+              </div>
+              <button type="submit" class="btn btn-success">Send</button>
+            </form>
+            
+          </app-ba-card>                        
+        </div>
+        <div>
+          <app-ba-card title="Standard Fields" baCardClass="with-scroll">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="inputFirstName">First Name</label>
+                  <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="inputLastName">Last Name</label>
+                  <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="inputFirstName">Email</label>
+                  <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="inputWebsite">Website</label>
+                  <input type="text" class="form-control" id="inputWebsite" placeholder="Website">
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+                        
+          </app-ba-card>           
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <app-ba-card title="Standard Fields" baCardClass="with-scroll">
+          <app-ba-pictureuploader [picture]="profile.picture" [defaultPicture]="defaultPicture" ></app-ba-pictureuploader>
+        </app-ba-card>          
+      </div>
+    </div>
+  </div>
+  

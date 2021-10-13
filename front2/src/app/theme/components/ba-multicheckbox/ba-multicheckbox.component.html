@@ -1,0 +1,15 @@
+
+    <app-ba-chechbox *ngFor="let item of this.myProp; index as i;"
+                 [(myProp)]="myProp[i].checked"
+                 [baCheckboxClass]="item.class"
+                 [label]="item.label"
+                 [disabled]="item.disabled"
+                 [value]="item.value"
+                 
+                 id=i
+                  ngDefaultControl>
+                 
+    </app-ba-chechbox>
+    
+  
+  
