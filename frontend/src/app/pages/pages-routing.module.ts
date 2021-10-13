@@ -5,29 +5,31 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageComponent } from './page.component';
 //import { TablesComponent } from './tables/tables.component';
 import {AuthGuard} from './auth.guard';
-import { ConsultaComponent } from './consulta/consulta.component';
-import { TransferComponent } from './transfer/transfer.component';
-import { ReportComponent } from './report/report.component';
+import { VerComponent } from './ver/ver.component';
+import { CrearComponent } from './crear/crear.component';
+
 
 const routes: Routes = [
+  //{
+    //path: '',
+    //loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
+    //canLoad: [AuthGuard]
+  //},
+  //{
+    //path: 'register',
+    //loadChildren: () => import('./register/register.module').then(m => m.RegisterModule),
+  //},
   {
     path: '',
-    loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
-    //canLoad: [AuthGuard]
-  },
-  {
-    path: 'register',
-    loadChildren: () => import('./register/register.module').then(m => m.RegisterModule),
-  },
-  {
-    path: 'pages',
     component: PageComponent,
-    canActivate:[AuthGuard],
+    //canActivate:[AuthGuard],
     children: [
       { path: '', component:DashboardComponent},
-      { path: 'consulta',component:ConsultaComponent },
-      { path: 'transfer',component:TransferComponent },
-      { path: 'report',component:ReportComponent },
+      { path: 'ver', component:VerComponent},
+      { path: 'crear', component:CrearComponent},
+      //{ path: 'consulta',component:ConsultaComponent },
+      //{ path: 'transfer',component:TransferComponent },
+      //{ path: 'report',component:ReportComponent },
 
     ]
   },  

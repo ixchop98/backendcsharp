@@ -7,10 +7,12 @@ import { ThemeModule } from '../theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { VerComponent } from './ver/ver.component';
+import { CrearComponent } from './crear/crear.component';
 
-import { ConsultaComponent } from './consulta/consulta.component';
-import { TransferComponent } from './transfer/transfer.component';
-import { ReportComponent } from './report/report.component';
+//import { ConsultaComponent } from './consulta/consulta.component';
+//import { TransferComponent } from './transfer/transfer.component';
+
 
 
 @NgModule({
@@ -20,10 +22,11 @@ import { ReportComponent } from './report/report.component';
     PageComponent,
     
     DashboardComponent,
+          VerComponent,
+          CrearComponent,
     
-    ConsultaComponent,
-    TransferComponent,
-    ReportComponent
+    //ConsultaComponent,
+    //TransferComponent
   ],
   imports: [
     CommonModule,

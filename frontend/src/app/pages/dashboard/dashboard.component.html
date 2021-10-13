@@ -1,21 +1,41 @@
 
 
 <div class="row">
-    <!--iframe src="https://archivos-12-p1.s3.us-east-2.amazonaws.com/files/1631382354306pend1.txt" width="400" height="400"></iframe-->
-    <h1>Hola este es el dashboard</h1>
-    <div class="col-md-12">
-        <app-ba-card title="Archivos Publicos" baCardClass="with-scroll">
-            <div class="row">
-                <!--app-file-card *ngFor="let item of this.global.mypubf" 
-                    [filename]="item.name"
-                    [fecha]="item.fecha"
-                    [path]="item.path"
-                    class="col-md-4" >
-                </app-file-card-->
-            </div>            
-
-        </app-ba-card>
+    <div class="col-12">
+  
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th width="50px" scope="col">#</th>
+            <th scope="col">Nit</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Correlativo</th>
+            <th scope="col">Ver</th>
+            <th scope="col">Modificar</th>
+            <th scope="col">Eliminar</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of this.global.arrayfacts; index as i;" >
+            <td scope="row">{{i+1}}</td>
+            <td>{{item["nit"]}}</td>
+            <td>{{item["nombre"]}}</td>
+            <td>{{item["fecha"]}}</td>
+            <td>{{item["corr"]}}</td>
+            <td><button   (click)="verFactura(item['corr'])" class="btn btn-default btn-auth"><i class="fa fa-eye"></i></button></td>
+            <td><button      class="btn btn-default btn-auth"><i class="fa fa-edit"></i></button></td>            
+            <td><button   (click)="borrarFactura(item['corr'])" class="btn btn-danger btn-auth"><i class="fa fa-trash"></i></button></td>                        
+          </tr>
+        </tbody>
+      </table>
+          
+      
         
+
+<!-- Button trigger modal -->
+
         
     </div>
 </div>

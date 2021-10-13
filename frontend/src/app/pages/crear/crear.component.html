@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-md-12">
+        <app-ba-card title="Crear factura">
+            <form>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <label >Nit</label>
+                        <input required type="number" min=0 class="form-control"   placeholder="Nit">                  
+                      </div>
+                      <div class="col-md-6">
+                          <label >Nombre</label>
+                          <input required type="text" min=0 class="form-control"   placeholder="Nombre">                  
+                      </div>
+                </div>
+
+              </form>
+
+              
+
+        </app-ba-card>        
+    </div>
+</div>
+
+
+
+
+
+<div class="row">
+    <div class="col-md-4">
+        <app-ba-card title="Agregar articulo">
+            <form>
+                <div class="form-group">
+                    <label >Producto</label>
+                    <select #producto class="form-control" >
+                      <option >1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                <div class="form-group">
+                    <label >Cantidad</label>
+                    <input required type="number" min=0 class="form-control"   placeholder="Nit">                                                      
+                </div>                                   
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+
+        </app-ba-card>        
+    </div>
+</div>
+
+
