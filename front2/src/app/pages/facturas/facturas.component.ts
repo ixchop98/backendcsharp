@@ -3,7 +3,8 @@ import { Component, OnInit,Input } from '@angular/core';
 
 
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
+import { ToastrService } from 'ngx-toastr';
+import {GlobalService} from '../../global.service';
 @Component({
   selector: 'ngbd-modal-content',
   
@@ -24,13 +25,13 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
     <div class="col-sm-6">
       <div class="form-group">
         <label for="inputFirstName">Nit</label>
-        <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+        <input #nit [disabled]="!editing" value ="{{this.global.currentproduct.nit}}" type="number" class="form-control" id="inputFirstName" placeholder="Nit">
       </div>
     </div>
     <div class="col-sm-6">
       <div class="form-group">
         <label for="inputLastName">Nombre</label>
-        <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+        <input #name [disabled]="!editing" value ="{{this.global.currentproduct.nombre}}" type="text" class="form-control" id="inputLastName" placeholder="Last Name">
       </div>
     </div>
    
@@ -39,21 +40,24 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
     <div class="col-sm-6">
         <div class="form-group">
           <label for="inputFirstName">Fecha</label>
-          <input type="date" class="form-control" id="inputFirstName" placeholder="First Name">
+          <input value="{{this.global.currentproduct.fecha}}" disabled=true type="text" class="form-control" id="inputFirstName" placeholder="First Name">
         </div>
       </div>
       <div class="col-sm-6">
         <div class="form-group">
           <label for="inputLastName">Total</label>
-          <input type="number" class="form-control" id="inputLastName" placeholder="Last Name">
+          <input value ="{{this.global.currentproduct.total}}" disabled=true type="number" class="form-control" id="inputLastName" placeholder="Last Name">
         </div>
       </div>       
   </div>
-  <div class="row">
+  <div class="d-flex">
     <div class="col-md-2">
         <button *ngIf="!editing" (click)="editar()" type="button" class="btn btn-default">Editar</button>
-        <button *ngIf="editing" (click)="guardar()"type="button" class="btn btn-primary">Guardar</button>
+        <button *ngIf="editing" (click)="guardar(nit.value,name.value)"type="button" class="btn btn-primary">Guardar</button>                
       </div>    
+      <div class="col-md-2">
+      <button *ngIf="editing" (click)="activeModal.dismiss('Cross click')" type="button" class="btn btn-default">Cancelar</button>      
+      </div>
   </div>  
     </div>
 
@@ -78,15 +82,15 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
               </thead>
               <tbody>
 
-              <tr>
-                <td class="table-id">0</td>
+              <tr *ngFor="let item of this.global.currentcarrito;index as i;">
+                <td class="table-id">{{item.id}}</td>
                 <td>Producto1</td>
                 <td>
-                  <label *ngIf="!editing" >2</label>
-                  <input *ngIf="editing" min="0" type="number" class="form-control"  >
+                  <!--label *ngIf="!editing" >{{item.nombre}}</label-->
+                  <input  #cantidad value="{{item.cantidad}}" [disabled]="!editing" min="0" type="number" class="form-control"  >
                 </td>
-                <td>Q 25</td>
-                <td>Q 50</td>            
+                <td>Q {{item.precio}}</td>
+                <td>Q {{item.precio*item.cantidad}}</td>            
                 <td *ngIf="editing">
                     <button type="button" class="btn btn-danger">X</button>
                 </td>
@@ -113,14 +117,20 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class NgbdModalContent {
   @Input() name:any;
   editing=false;
-  constructor(public activeModal: NgbActiveModal) {}
+  constructor(public activeModal: NgbActiveModal,public global:GlobalService,private toastr: ToastrService) {}
   editar(){
     this.editing=!this.editing;
   }
-  guardar(){
-    this.editing=!this.editing;
+  guardar(nit:any,name:any){
+    this.editing=!this.editing;    
+    this.global.updateFactura(this.global.currentproduct.corr,nit,name);
+    this.toastr.success('Factura editada', 'Hecho');
+    this.activeModal.close('Close click');
     //Mandar la informacion al server
   }  
+  toint(data:any){
+    return parseInt(data);
+  }
 
 }
 
@@ -134,16 +144,19 @@ export class NgbdModalContent {
 })
 export class FacturasComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal,public global:GlobalService) { }
 
   ngOnInit(): void {
+    this.global.getallFactura();
   }
-  open() {
+  open(corr:any) {
+    
+    this.global.getFactura(corr)
     const modalRef = this.modalService.open(NgbdModalContent);
     modalRef.componentInstance.name = 'World';
   }    
   eliminar(correlativo:any){
-
+    this.global.deleteFactura(correlativo);
   }  
 
 }

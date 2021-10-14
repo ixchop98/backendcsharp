@@ -10,6 +10,6 @@ export class AppComponent {
   isMenuCollapsed: boolean = true;
 
   constructor(public global:GlobalService){
-    this.global.generarProductos();
+    //this.global.generarProductos();
   }
 }

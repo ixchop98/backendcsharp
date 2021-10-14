@@ -5,22 +5,22 @@
         <app-ba-card title="Productos en la tienda" baCardClass="with-scroll ">
 
 
-    <div class="col-4" *ngFor="let item of this.global.productos;index i" style="display: inline-block;">
+    <div class="col-4" *ngFor="let item of this.global.productos;index as i;" style="display: inline-block;">
         <div class="d-flex pt-3">
             <img 
                 class="col-md-6"
-                [src]="item.img">
+                [src]="'https://picsum.photos/'+(item.id-500)">
             
                 <div class="col-md-7">
-                    <h4 class="align-center">{{item.producto}}</h4>    
+                    <h4 class="align-center">{{item.nombre}}</h4>
                     
                     <p class="align-justify">Precio: Q{{item.precio}}</p>
                     <div class="d-flex">
                         <label class="form-control">Cantidad: </label>
-                        <input type="number" [min]=0 class="form-control" value="1">
+                        <input #cantidad type="number" [min]=0 class="form-control" value="1">
                     </div>
                    
-                    <button (click)="global.agregarCarrito(item)" type="submit" class="btn btn-primary">Add</button>
+                    <button (click)="agregarCarrito(item,cantidad)" type="submit" class="btn btn-primary">Add</button>
                 </div>
             
         </div>

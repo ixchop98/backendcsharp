@@ -1,42 +1,46 @@
 
 <app-ba-card title="Datos del usuario" baCardClass="with-scroll">
+  <form>
   <div class="row">
     <div class="col-sm-6">
       <div class="form-group">
-        <label for="inputFirstName" #nit id="nit">Nit</label>
-        <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+        <label for="inputFirstName" >Nit</label>
+        <input #nit value=" " required type="number" class="form-control"   placeholder="Nit">
+        
       </div>
     </div>
+    
     <div class="col-sm-6">
       <div class="form-group">
-        <label for="inputLastName" #name id="nombre">Nombre</label>
-        <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+        <label for="inputLastName" >Nombre</label>
+        <input #name value=" " required type="text" class="form-control"   placeholder="Name">
       </div>
     </div>
-   
-  </div>    
+    
+  </div>   
+
   <div class="row">
-    <div class="col-sm-6">
+      <!--div class="col-sm-6">
         <div class="form-group">
           <label for="inputFirstName">Fecha</label>
           <input type="date" class="form-control" id="inputFirstName" placeholder="First Name">
         </div>
-      </div>
+      </div-->
       <div class="col-sm-6">
         <div class="form-group">
           <label for="inputLastName">Total</label>
-          <input type="number" class="form-control" id="inputLastName" placeholder="Last Name">
+          <label   class="form-control" >{{getTotal()}}</label>
         </div>
       </div>       
   </div>
-  <div class="row">
-    <div class="col-md-2">
-        <button  type="button" class="btn btn-default">Crear Factura</button>
-      </div>
-      <div class="col-md-2">
-        <button (click)="global.limpiarCarrito()" type="button" class="btn btn-danger">Limpiar Carrito</button>
-      </div>       
-  </div>  
+  
+  
+    <div >
+      <button  (click)="crearFactura(nit.value,name.value)" type="submit" class="btn btn-default col-md-2">Crear Factura</button>  
+      <button (click)="global.limpiarCarrito()" type="button" class="btn btn-danger col-md-2">Limpiar Carrito</button>
+    </div>     
+  
+</form> 
   
 </app-ba-card>  
 
@@ -63,16 +67,16 @@
                   </thead>
                   <tbody>
 
-                  <tr>
+                  <tr *ngFor="let item of this.global.itemscarrito;index as i">
                     <td class="table-id">0</td>
-                    <td>Producto1</td>
+                    <td>{{item.nombre}}</td>
                     <td >
-                      <label *ngIf="true" >2</label>
+                      <label *ngIf="true" >{{item.cantidad}}</label>
                       <input *ngIf="false" type="number" class="form-control"  >
 
                     </td>
-                    <td>Q 25</td>
-                    <td>Q 50</td>
+                    <td>Q {{item.precio}}</td>
+                    <td>Q {{item.subtotal}}</td>
                     <td>
                         <button type="button" class="btn btn-info">
                           <span *ngIf="true">Editar</span>
@@ -80,7 +84,7 @@
                         </button>
                     </td>                    
                     <td>
-                        <button type="button" class="btn btn-danger">X</button>
+                        <button (click)="eliminarItemCarrito(item.id)" type="button" class="btn btn-danger">X</button>
                     </td>
                   </tr>
                   

@@ -29,18 +29,18 @@
                     </td>
                   </tr-->
 
-                  <tr>
-                    <td class="table-id">1</td>
-                    <td>020304</td>
-                    <td>Usuario1</td>
-                    <td>2017001</td>
-                    <td>1/2/2020</td>
-                    <td>25000</td>
+                  <tr *ngFor="let item of this.global.arrayfacturas;index as i">
+                    <td class="table-id" >{{i+1}}</td>
+                    <td>{{item.corr}}</td>
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.nit}}</td>
+                    <td>{{item.fecha}}</td>
+                    <td>Q. {{item.total}}</td>
                     <td>
-                        <button  (click)="open()"  type="button" class="btn btn-default">Ver</button>
+                        <button  (click)="open(item.corr)"  type="button" class="btn btn-default">Ver</button>
                     </td>
                     <td>
-                      <button  (click)="eliminar(2)"  type="button" class="btn btn-danger">X</button>
+                      <button  (click)="eliminar(item.corr)"  type="button" class="btn btn-danger">X</button>
                   </td>                    
                   </tr>
                   
